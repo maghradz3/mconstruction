@@ -20,10 +20,10 @@ const Carousel = ({ children: images }) => {
       </div>
       <div className="absolute inset-0 flex items-center justify-between p-4">
         <button onClick={prev} className="btn glass btn-sm">
-          <IoIosArrowBack />
+          <IoIosArrowBack className="text-gray-800" />
         </button>
         <button onClick={next} className="btn glass btn-sm">
-          <IoIosArrowForward />
+          <IoIosArrowForward className="text-gray-800" />
         </button>
       </div>
       <div className="absolute bottom-4 right-0 left-0">

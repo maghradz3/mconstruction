@@ -1,12 +1,22 @@
 import Main from "@/components/Main";
-import React from "react";
+import { fetchProjects } from "@/utils/actions";
 
-const MainPage = () => {
+import {
+  dehydrate,
+  HydrationBoundary,
+  QueryClient,
+} from "@tanstack/react-query";
+
+const MainPage = async () => {
+  const queryClient = new QueryClient();
+  await queryClient.prefetchQuery({
+    queryKey: ["project"],
+    queryFn: () => fetchProjects(),
+  });
   return (
-    <div>
-      <h1 className="text-secondary">Ak unda iyos kontenti</h1>
+    <HydrationBoundary state={dehydrate(queryClient)}>
       <Main />
-    </div>
+    </HydrationBoundary>
   );
 };
 

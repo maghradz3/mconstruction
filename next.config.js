@@ -4,9 +4,9 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "oaidalleapiprodscus.blob.core.windows.net",
+        hostname: "daisyui.com",
         port: "",
-        pathname: "/private/**",
+        pathname: "/**",
       },
       {
         protocol: "https",
