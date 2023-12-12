@@ -3,14 +3,6 @@
 const url = process.env.BACKEND_URL;
 
 import axios from "axios";
-import prisma from "./db";
-
-export const createModel = async (formValues) => {
-  console.log(formValues);
-  await prisma.tour.create({
-    data: formValues,
-  });
-};
 
 export const fetchProjects = async () => {
   try {
