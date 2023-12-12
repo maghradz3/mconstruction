@@ -9,3 +9,12 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+
+model Tour {
+  id    String     @id @default(uuid())
+  createdAt DateTime  @default(now())
+  title  String?
+  description String?
+  image String?
+}
