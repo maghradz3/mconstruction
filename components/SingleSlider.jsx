@@ -41,7 +41,7 @@ const SingleSlider = ({ images }) => {
         {images.map((_, i) => {
           return (
             <a
-              href={`#item${i + 1}`}
+              href={`#item${i}`}
               className="w-[15px] h-[15px] text-[10px]   md:w-[20px] md:h-[20px] md:text-[14px] flex justify-center items-center bg-slate-400  rounded-md
              hover:scale-125 hover:bg-slate-600 hover:text-white transition-all duration-200  "
             >

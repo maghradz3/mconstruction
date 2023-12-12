@@ -1,4 +1,7 @@
 "use server";
+
+const url = process.env.BACKEND_URL;
+
 import axios from "axios";
 import prisma from "./db";
 
@@ -11,7 +14,7 @@ export const createModel = async (formValues) => {
 
 export const fetchProjects = async () => {
   try {
-    const { data } = await axios.get("http://localhost:8000/api/projects/");
+    const { data } = await axios.get(`${url}`);
 
     return data;
   } catch (error) {
@@ -21,9 +24,7 @@ export const fetchProjects = async () => {
 
 export const fetchSingleProject = async (id) => {
   try {
-    const { data } = await axios.get(
-      `http://localhost:8000/api/projects/${id}`
-    );
+    const { data } = await axios.get(`${url}${id}`);
 
     return data;
   } catch (error) {

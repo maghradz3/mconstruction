@@ -9,36 +9,36 @@ import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/variants";
 
-const Main = () => {
-  const [checked, setIsCheked] = useState(false);
-  const { data, isPending, error, isError } = useQuery({
-    queryKey: ["project"],
-    queryFn: fetchProjects,
-  });
+const Main = ({ data }) => {
+  // const { data, isPending, error, isError } = useQuery({
+  //   queryKey: ["project"],
+  //   queryFn: fetchProjects,
+  // });
 
-  {
-    isPending && <h1>Loading....</h1>;
-  }
-  {
-    isError && <h1>{error}</h1>;
-  }
+  // {
+  //   isPending && <h1>Loading....</h1>;
+  // }
+  // {
+  //   isError && <h1>{error}</h1>;
+  // }
 
   return (
-    <div className="flex-flex-col">
+    <div className="flex flex-col">
       <motion.h1
-        variants={fadeIn("down", 0.4)}
+        variants={fadeIn("down", 0.2)}
         initial="hidden"
         animate="show"
         exit="hidden"
-        className="text-xl md:text-6xl text-primary mt-3 "
+        className=" text-center mb-12  font-semibold text-3xl mt-4 md:text-5xl leading-tight place-self-start  "
       >
-        შესრულებული პროექტები
+        Completed
+        <span className="text-primary"> Projects</span>
       </motion.h1>
       <div className="grid sm:grid-cols-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-9 ">
         {data?.map((project) => {
           return (
             <motion.div
-              variants={fadeIn("up", 0.4)}
+              variants={fadeIn("up", 0.2)}
               initial="hidden"
               animate="show"
               exit="hidden"
