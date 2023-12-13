@@ -16,9 +16,9 @@ export default function RootLayout({ children }) {
       <div className="drawer-content">
         <label
           htmlFor="my-drawer-2"
-          className="drawer-button lg:hidden fixed top-6 right-6"
+          className="drawer-button lg:hidden fixed top-6 right-6 z-50"
         >
-          <CiMenuFries className="w-8 h-8 text-primary" />
+          <CiMenuFries className="w-8 h-8 text-primary " />
         </label>
         <div className="bg-base-200 px-8 py-12 min-h-screen">{children}</div>
       </div>

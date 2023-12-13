@@ -7,25 +7,6 @@ import lukaMg from "../assets/Luka.jpg";
 import { FaLinkedin, FaFacebook, FaPhone } from "react-icons/fa";
 import AboutInfo from "./AboutInfo";
 
-const Users = [
-  {
-    name: "Luka Maghradze",
-    image: { lukaMg },
-    description: "Project Manager with 5 year experience",
-    Linkdin: "url",
-    facebook: "url",
-    phone: "url",
-  },
-  {
-    name: "Givi Meburishvili",
-    image: { lukaMg },
-    description: "Project Manager with 5 year experience",
-    Linkdin: "url",
-    facebook: "url",
-    phone: "url",
-  },
-];
-
 const About = () => {
   return (
     <div className="flex flex-col place-self-start">
@@ -38,13 +19,7 @@ const About = () => {
       >
         Our <span className="text-primary">Team</span>
       </motion.h1>
-      <motion.div
-        variants={fadeIn("up", 0.6)}
-        initial="hidden"
-        animate="show"
-        exit="hidden"
-        className="flex flex-col md:flex-row"
-      ></motion.div>
+
       <AboutInfo />
     </div>
   );
